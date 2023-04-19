@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+        </style>
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <form action="" method="post" name="FormEntrace">
+            <div class="inputBox">
+            <label for="">Name:</label>
+            <input type="text" id="name-input" class="formInput" maxlength="70" minlength="15" autocomplete="off" onkeydown="OnlyLetter()" pattern="[A-Za-z]+" title="Only letters">
+            <label for="">E-mail:</label>
+            <input type="email" id="mail-input" class="formInput" maxlength="40" minlength="10" autocomplete="off" title="exemple@email.com">
+            <label for="">Phone: (optional)</label>
+            <input type="tel" id="tel-input" class="formInput" maxlength="16" onkeyup="handlePhone(event)" placeholder="99 99 99090-9090" autocomplete="off">
+            <div>
+                <label for="">Password:</label>
+                <input type="password" id="Pass-input" class="formInput" minlength="8" autocomplete="off">
+                <span onclick="changerTypeInput()" class="togglepass" for="">See</span>
+            </div> 
+        </form>  
+            <div class="boxButtonForm">
+                <button type="button" onclick="sendInfoForm(), lengthMin()">Send</button>
+                <button type="button" onclick="clearOutp()">Clear output</button>
+                <button type="reset" onclick="FormClear()">Clear form</button> 
+                <button type="submit">Confirm -></button>
+            </div> 
+        </div>
+            <output>
+                <h2>Data output</h2>
+                <h4 id="NameOutput"></h4>
+                <h4 id="MailOutput"></h4>
+                <h4 id="TelOutput"></h4>
+            </output>
+    </section>
+    <script src="./form.js"></script>
+    <script src="./input.js"></script>
+</body>
+</html>
